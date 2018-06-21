@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+             
+             NavigationPage.HasNavigationBar="False"
+             NavigationPage.BackButtonTitle="False"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RealTrolli.CompleteRegistration"    
+    xmlns:local="clr-namespace:OneSignalAPI;assembly=OneSignalAPI">
+    <AbsoluteLayout>
+        <Image Source="bkg2.png" Aspect="Fill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="SizeProportional"/>
+
+        <Label Text="Sign Up"  FontSize="30" TextColor="White" AbsoluteLayout.LayoutBounds="39,29,156,46" AbsoluteLayout.LayoutFlags="None">
+            <Label.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                    <On Platform="iOS" Value="Raleway-Medium_1" />
+                    <On Platform="Android" Value="Raleway-Medium_1.ttf#Raleway-Medium_1" />
+                </OnPlatform>
+            </Label.FontFamily>
+        </Label>
+            <BoxView BackgroundColor="#0a91d2" AbsoluteLayout.LayoutBounds="39,70,28,1" AbsoluteLayout.LayoutFlags="None"/>
+
+         
+            <Label Text="SUBURB" FontSize="14" TextColor="#aed582" AbsoluteLayout.LayoutBounds="39,130,85,20" AbsoluteLayout.LayoutFlags="None">
+            <Label.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                    <On Platform="iOS" Value="Raleway-SemiBold_1" />
+                    <On Platform="Android" Value="Raleway-SemiBold_1.ttf#Raleway-SemiBold_1" />
+                </OnPlatform>
+            </Label.FontFamily>
+        </Label>
+        <local:MyEntry x:Name="subrub" Text="" TextColor="White" AbsoluteLayout.LayoutBounds="38,150,269,44" AbsoluteLayout.LayoutFlags="None">
+            <Entry.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                    <On Platform="iOS" Value="Raleway-Regular_1" />
+                    <On Platform="Android" Value="Raleway-Regular_1.ttf#Raleway-Regular_1" />
+                </OnPlatform>
+            </Entry.FontFamily>
+        </local:MyEntry>
+
+        <Label Text="STATE" FontSize="14" TextColor="#aed582" AbsoluteLayout.LayoutBounds="38,220,44,20" AbsoluteLayout.LayoutFlags="None">
+            <Label.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                    <On Platform="iOS" Value="Raleway-SemiBold_1" />
+                    <On Platform="Android" Value="Raleway-SemiBold_1.ttf#Raleway-SemiBold_1" />
+                </OnPlatform>
+            </Label.FontFamily>
+        </Label>
+
+        <local:CustomPickerRenderer x:Name="statesPicker" TextColor="White" AbsoluteLayout.LayoutBounds="39,240,269,44" AbsoluteLayout.LayoutFlags="None">
+            <Picker.Items>
+                <x:String>ACT</x:String>
+                <x:String>NSW</x:String>
+                <x:String>NT</x:String>
+                <x:String>QLD</x:String>
+                <x:String>SA</x:String>
+                <x:String>TAS</x:String>
+                <x:String>VIC</x:String>
+                <x:String>WA</x:String>
+
+            </Picker.Items>
+        </local:CustomPickerRenderer>
+
+        <Label Text="POST CODE" FontSize="14" TextColor="#aed582"  AbsoluteLayout.LayoutBounds="39,310,87,20" AbsoluteLayout.LayoutFlags="None">
+            <Label.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                    <On Platform="iOS" Value="Raleway-SemiBold_1" />
+                    <On Platform="Android" Value="Raleway-SemiBold_1.ttf#Raleway-SemiBold_1" />
+                </OnPlatform>
+            </Label.FontFamily>
+        </Label>
+        <local:MyEntry x:Name="postCode" TextColor="White" Text="" Keyboard="Numeric" AbsoluteLayout.LayoutBounds="39,330,269,44" AbsoluteLayout.LayoutFlags="None">
+            <Entry.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                    <On Platform="iOS" Value="Raleway-Regular_1" />
+                    <On Platform="Android" Value="Raleway-Regular_1.ttf#Raleway-Regular_1" />
+                </OnPlatform>
+            </Entry.FontFamily>
+        </local:MyEntry>
+
+
+        <Label x:Name="starStates" Text=" "  TextColor="#ff6600" FontSize="26" AbsoluteLayout.LayoutBounds="30,240,30,30" AbsoluteLayout.LayoutFlags="None"/>
+        <Label x:Name="starPostcode" Text=" "  TextColor="#ff6600" FontSize="26" AbsoluteLayout.LayoutBounds="30,330,30,30" AbsoluteLayout.LayoutFlags="None"/>
+        <Label x:Name="starSubrub" Text=" "  TextColor="#ff6600" FontSize="26" AbsoluteLayout.LayoutBounds="30,150,30,30" AbsoluteLayout.LayoutFlags="None"/>
+
+
+        <local:CustomButtonText x:Name="btnSignUp" Text="Sign up" Clicked="signUp_button" BackgroundColor="Transparent" StartColor="#0075b9" EndColor="#00629c" TextColor="#dadadd" AbsoluteLayout.LayoutBounds="0,1,1,50" AbsoluteLayout.LayoutFlags="WidthProportional,PositionProportional"  />
+        <Label x:Name="validationError" FontSize="14" TextColor="#ff6600" AbsoluteLayout.LayoutBounds="110,470,200,20" AbsoluteLayout.LayoutFlags="None">
+            <Label.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                    <On Platform="iOS" Value="Raleway-SemiBold_1" />
+                    <On Platform="Android" Value="Raleway-SemiBold_1.ttf#Raleway-SemiBold_1" />
+                </OnPlatform>
+            </Label.FontFamily>
+        </Label>
+
+
+    </AbsoluteLayout>
+  
+</ContentPage>

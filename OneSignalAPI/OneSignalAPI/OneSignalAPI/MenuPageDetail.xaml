@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+            BackgroundColor="#262b3f"
+            xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OneSignalAPI.MenuPageDetail"
+             Title="Trolli">
+  <AbsoluteLayout Padding="-5,0,-5,-5">
+        <Image Source="bkg2.png" Aspect="Fill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="SizeProportional" />
+        <Image Source="Trollilogo.png" AbsoluteLayout.LayoutBounds="0.5,0.5,137,21" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+        <Button Text="Tracking Location (Notification)" Clicked="btn_text" HorizontalOptions="Center" VerticalOptions="Center" />
+        <Button Text="Notification Off/On" Clicked="NotificationTest" AbsoluteLayout.LayoutBounds="20,80,137,50"/>
+        <Switch IsToggled="true" Toggled="ToggledHandler" AbsoluteLayout.LayoutBounds="70,130,100,100" AbsoluteLayout.LayoutFlags="None"/>
+    </AbsoluteLayout>
+</ContentPage>

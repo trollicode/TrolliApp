@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OneSignalAPI.AddProduct"
+              xmlns:local="clr-namespace:OneSignalAPI;assembly=OneSignalAPI"
+             xmlns:autocomplete="clr-namespace:Syncfusion.SfAutoComplete.XForms;assembly=Syncfusion.SfAutoComplete.XForms"
+             >
+
+  
+    <AbsoluteLayout Padding="-5,-5,-5,-5">
+            <Image Source="bkg2.png" Aspect="Fill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="SizeProportional"/>
+        <Label Text="Add Items" FontSize="18" TextColor="#aed582" AbsoluteLayout.LayoutBounds="30,20,120,44" AbsoluteLayout.LayoutFlags="None">
+            <Label.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                    <On Platform="iOS" Value="Raleway-SemiBold_1" />
+                    <On Platform="Android" Value="Raleway-SemiBold_1.ttf#Raleway-SemiBold_1" />
+                </OnPlatform>
+            </Label.FontFamily>
+        </Label>
+
+        <Label Text="Items Name" TextColor="#aed582" AbsoluteLayout.LayoutBounds="39,50,120,44" AbsoluteLayout.LayoutFlags="None">
+                <Label.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String">
+                        <On Platform="iOS" Value="Raleway-SemiBold_1" />
+                        <On Platform="Android" Value="Raleway-SemiBold_1.ttf#Raleway-SemiBold_1" />
+                    </OnPlatform>
+                </Label.FontFamily>
+            </Label>
+        <autocomplete:SfAutoComplete HeightRequest="40" TextColor="White" x:Name="autoComplete" DropDownBackgroundColor="#aed582" AbsoluteLayout.LayoutBounds="39,70,269,44" AbsoluteLayout.LayoutFlags="None" TextHighlightMode="MultipleOccurrence" SuggestionMode="Contains" HighlightedTextColor="Red" IgnoreDiacritic="false"  IsSelectedItemsVisibleInDropDown="True"/>
+            <Label Text="Quantity" TextColor="#aed582" AbsoluteLayout.LayoutBounds="39,130,80,44" AbsoluteLayout.LayoutFlags="None">
+                <Label.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String">
+                        <On Platform="iOS" Value="Raleway-SemiBold_1" />
+                        <On Platform="Android" Value="Raleway-SemiBold_1.ttf#Raleway-SemiBold_1" />
+                    </OnPlatform>
+                </Label.FontFamily>
+            </Label>
+            <Entry Keyboard="Numeric" x:Name="Quantity" Text="" TextColor="White" AbsoluteLayout.LayoutBounds="39,160,269,44" AbsoluteLayout.LayoutFlags="None" BackgroundColor="Transparent">
+                <Entry.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String">
+                        <On Platform="iOS" Value="Raleway-Regular_1" />
+                        <On Platform="Android" Value="Raleway-Regular_1.ttf#Raleway-Regular_1" />
+                    </OnPlatform>
+                </Entry.FontFamily>
+            </Entry>
+            <Label Text="Unit" TextColor="#aed582" AbsoluteLayout.LayoutBounds="39,220,80,44" AbsoluteLayout.LayoutFlags="None"/>
+         <local:CustomPickerRenderer x:Name="Unit" TextColor="White" AbsoluteLayout.LayoutBounds="39,250,269,44" AbsoluteLayout.LayoutFlags="None" BackgroundColor="Transparent">
+                <Picker.Items>
+                    <x:String>Kilogram(s)</x:String>
+                    <x:String>Gram(s)</x:String>
+                    <x:String>Litre(s)</x:String>
+                    <x:String>Pc(s)</x:String>
+                   
+                </Picker.Items>
+         </local:CustomPickerRenderer>
+            <Label Text="Size" TextColor="#aed582" AbsoluteLayout.LayoutBounds="39,310,80,44" AbsoluteLayout.LayoutFlags="None">
+                <Label.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String">
+                        <On Platform="iOS" Value="Raleway-SemiBold_1" />
+                        <On Platform="Android" Value="Raleway-SemiBold_1.ttf#Raleway-SemiBold_1" />
+                    </OnPlatform>
+                </Label.FontFamily>
+            </Label>
+            <local:CustomPickerRenderer x:Name="Size"  TextColor="White" AbsoluteLayout.LayoutBounds="39,340,269,44" AbsoluteLayout.LayoutFlags="None" BackgroundColor="Transparent" SelectedIndexChanged="ChangeValueHandler">
+                <Picker.Items>
+                    <x:String>Small</x:String>
+                    <x:String>Medium</x:String>
+                    <x:String>Large</x:String>
+                    <x:String>Standard</x:String>
+                    <x:String>Custom Cell</x:String>
+                </Picker.Items>
+            </local:CustomPickerRenderer>
+            <Entry x:Name="SizeEntry" TextColor="White" AbsoluteLayout.LayoutBounds="39,340,269,44" AbsoluteLayout.LayoutFlags="None" BackgroundColor="Transparent" IsVisible="False">
+                <Entry.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String">
+                        <On Platform="iOS" Value="Raleway-Regular_1" />
+                        <On Platform="Android" Value="Raleway-Regular_1.ttf#Raleway-Regular_1" />
+                    </OnPlatform>
+                </Entry.FontFamily>
+            </Entry>
+            <Label Text="Description" TextColor="#aed582" AbsoluteLayout.LayoutBounds="39,400,130,30" AbsoluteLayout.LayoutFlags="None">
+                <Label.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String">
+                        <On Platform="iOS" Value="Raleway-SemiBold_1" />
+                        <On Platform="Android" Value="Raleway-SemiBold_1.ttf#Raleway-SemiBold_1" />
+                    </OnPlatform>
+                </Label.FontFamily>
+            </Label>
+            <Entry x:Name="description" Placeholder="(Optional)" TextColor="White" AbsoluteLayout.LayoutBounds="39,430,269,50" AbsoluteLayout.LayoutFlags="None" BackgroundColor="Transparent">
+                <Entry.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String">
+                        <On Platform="iOS" Value="Raleway-Regular_1" />
+                        <On Platform="Android" Value="Raleway-Regular_1.ttf#Raleway-Regular_1" />
+                    </OnPlatform>
+                </Entry.FontFamily>
+            </Entry>
+          
+
+            <local:CustomButtonText  Text="Add Product" Clicked="add_productEvent" BackgroundColor="Transparent" StartColor="#0075b9" EndColor="#00629c" TextColor="#dadadd" AbsoluteLayout.LayoutBounds="0,1,0.5,50" AbsoluteLayout.LayoutFlags="WidthProportional,PositionProportional"/>
+            <local:CustomButtonText  Text="Save" Clicked="saveEvent" BackgroundColor="Transparent" StartColor="#2d3c54" EndColor="#262b3f" TextColor="#dadadd" AbsoluteLayout.LayoutBounds="1,1,0.5,50" AbsoluteLayout.LayoutFlags="WidthProportional,PositionProportional"/>
+
+        </AbsoluteLayout>
+
+       
+</ContentPage>

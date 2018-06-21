@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OneSignalAPI.ScheduledTrolly"
+             Title="Scheduled Trolly Time"
+             xmlns:sys="clr-namespace:System;assembly=mscorilb"
+             xmlns:local="clr-namespace:OneSignalAPI;assembly=OneSignalAPI">
+    <AbsoluteLayout>
+
+        <Image Source="bkg2.png" Aspect="Fill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="SizeProportional" />
+        <Label Text="Trolly Schuduled" TextColor="#aed582" FontSize="16" AbsoluteLayout.LayoutBounds="30,20,150,50" AbsoluteLayout.LayoutFlags="None">
+            <Label.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                    <On Platform="iOS" Value="Raleway-SemiBold_1" />
+                    <On Platform="Android" Value="Raleway-SemiBold_1.ttf#Raleway-SemiBold_1" />
+                </OnPlatform>
+            </Label.FontFamily>
+        </Label>
+
+        <Switch AbsoluteLayout.LayoutBounds="190,8,50,50" AbsoluteLayout.LayoutFlags="None" Toggled="toggled_event"/>
+        <Label Text="Date" TextColor="#aed582" FontSize="16" AbsoluteLayout.LayoutBounds="30,120,80,50" AbsoluteLayout.LayoutFlags="None">
+            <Label.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                    <On Platform="iOS" Value="Raleway-SemiBold_1" />
+                    <On Platform="Android" Value="Raleway-SemiBold_1.ttf#Raleway-SemiBold_1" />
+                </OnPlatform>
+            </Label.FontFamily>
+        </Label>
+        <Label x:Name="currentDate" Text="" TextColor="White" FontSize="16" AbsoluteLayout.LayoutBounds="80,120,0.8,50" AbsoluteLayout.LayoutFlags="WidthProportional">
+            <Label.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                    <On Platform="iOS" Value="Raleway-SemiBold_1" />
+                    <On Platform="Android" Value="Raleway-SemiBold_1.ttf#Raleway-SemiBold_1" />
+                </OnPlatform>
+            </Label.FontFamily>
+        </Label>
+        <DatePicker Date="1 jan 2018" Format="d MMM yyyy" TextColor="White" x:Name="datePicker" IsVisible="False" AbsoluteLayout.LayoutBounds="80,100,0.8,50" AbsoluteLayout.LayoutFlags="WidthProportional"/>
+
+        <Label Text="Time" TextColor="#aed582" FontSize="16" AbsoluteLayout.LayoutBounds="30,170,80,50" AbsoluteLayout.LayoutFlags="None">
+            <Label.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                    <On Platform="iOS" Value="Raleway-SemiBold_1" />
+                    <On Platform="Android" Value="Raleway-SemiBold_1.ttf#Raleway-SemiBold_1" />
+                </OnPlatform>
+            </Label.FontFamily>
+        </Label>
+
+        <Label x:Name="currentTime" Text="" TextColor="White" FontSize="16" AbsoluteLayout.LayoutBounds="80,170,0.8,50" AbsoluteLayout.LayoutFlags="WidthProportional">
+            <Label.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                    <On Platform="iOS" Value="Raleway-SemiBold_1" />
+                    <On Platform="Android" Value="Raleway-SemiBold_1.ttf#Raleway-SemiBold_1" />
+                </OnPlatform>
+            </Label.FontFamily>
+        </Label>
+        <TimePicker x:Name="timePicker" TextColor="White"  IsVisible="False" AbsoluteLayout.LayoutBounds="80,160,0.8,50" AbsoluteLayout.LayoutFlags="WidthProportional"/>
+        <local:CustomButtonText  Text="Next" Clicked="SaveTrolly" BackgroundColor="Transparent" StartColor="#0075b9" EndColor="#00629c" TextColor="#dadadd" AbsoluteLayout.LayoutBounds="0,1,1,50" AbsoluteLayout.LayoutFlags="WidthProportional,PositionProportional"/>
+
+    </AbsoluteLayout>
+</ContentPage>
+    

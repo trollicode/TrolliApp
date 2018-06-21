@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OneSignalAPI.CreateTrolli"
+              xmlns:local="clr-namespace:OneSignalAPI;assembly=OneSignalAPI"
+            xmlns:autocomplete="clr-namespace:Syncfusion.SfAutoComplete.XForms;assembly=Syncfusion.SfAutoComplete.XForms"
+             Title="Create Trolly"
+             >
+
+    <AbsoluteLayout Padding="-5,-5,-5,-5">
+        <Image Source="bkg2.png" Aspect="Fill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="SizeProportional"/>
+        <Label Text="Stores" TextColor="#aed582" FontSize="16" AbsoluteLayout.LayoutBounds="30,20,80,50" AbsoluteLayout.LayoutFlags="None">
+            <Label.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                    <On Platform="iOS" Value="Raleway-SemiBold_1" />
+                    <On Platform="Android" Value="Raleway-SemiBold_1.ttf#Raleway-SemiBold_1" />
+                </OnPlatform>
+            </Label.FontFamily>
+        </Label>
+
+        <autocomplete:SfAutoComplete HeightRequest="60" ShowBorder="True" TextColor="White" x:Name="autoComplete" DropDownBackgroundColor="#aed582" AbsoluteLayout.LayoutBounds="30,40,0.7,50" AbsoluteLayout.LayoutFlags="WidthProportional" TextHighlightMode="MultipleOccurrence" SuggestionMode="Contains" HighlightedTextColor="Red" IgnoreDiacritic="false"  IsSelectedItemsVisibleInDropDown="false">
+            <autocomplete:SfAutoComplete.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                    <On Platform="iOS" Value="Raleway-Regular_1" />
+                    <On Platform="Android" Value="Raleway-Regular_1.ttf#Raleway-Regular_1" />
+                </OnPlatform>
+            </autocomplete:SfAutoComplete.FontFamily>
+        </autocomplete:SfAutoComplete>
+        <Label Text="Store Suburb" TextColor="#aed582" FontSize="16" AbsoluteLayout.LayoutBounds="30,100,120,50" AbsoluteLayout.LayoutFlags="None">
+            <Label.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                    <On Platform="iOS" Value="Raleway-SemiBold_1" />
+                    <On Platform="Android" Value="Raleway-SemiBold_1.ttf#Raleway-SemiBold_1" />
+                </OnPlatform>
+            </Label.FontFamily>
+        </Label>
+        <local:MyEntry x:Name="storesSuburb" TextColor="White" Text="" AbsoluteLayout.LayoutBounds="30,130,0.7,44" AbsoluteLayout.LayoutFlags="WidthProportional">
+            <Entry.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                    <On Platform="iOS" Value="Raleway-Regular_1" />
+                    <On Platform="Android" Value="Raleway-Regular_1.ttf#Raleway-Regular_1" />
+                </OnPlatform>
+            </Entry.FontFamily>
+        </local:MyEntry>
+        <Button Image="addicon.png" Text="Add Store" Clicked="AddStore" AbsoluteLayout.LayoutBounds="0.9,170,120,35" AbsoluteLayout.LayoutFlags="XProportional"/>
+      
+
+        <Label x:Name="listValidationText" TextColor="White" AbsoluteLayout.LayoutBounds="0.5,0.8,0.5,0.5" AbsoluteLayout.LayoutFlags="All"/>
+        <ListView x:Name="listView" ItemSelected="ItemSelect" ItemTapped="ItemTapped" HasUnevenRows="True" AbsoluteLayout.LayoutBounds="20,210,0.9,0.5" AbsoluteLayout.LayoutFlags="SizeProportional" BackgroundColor="Transparent">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <AbsoluteLayout BackgroundColor="#0075b9">
+                            <Label Text="{Binding store}" TextColor="#aed582" AbsoluteLayout.LayoutBounds="5,10,180,50" AbsoluteLayout.LayoutFlags="None">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Raleway-SemiBold_1" />
+                                        <On Platform="Android" Value="Raleway-SemiBold_1.ttf#Raleway-SemiBold_1" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
+                            </Label>
+                            <Label Text="{Binding storeSuburb}" TextColor="#aed582" AbsoluteLayout.LayoutBounds="5,35,180,50" AbsoluteLayout.LayoutFlags="None">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Raleway-SemiBold_1" />
+                                        <On Platform="Android" Value="Raleway-SemiBold_1.ttf#Raleway-SemiBold_1" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
+                            </Label>
+
+                            <autocomplete:SfAutoComplete HeightRequest="30" ShowBorder="True" TextColor="White" x:Name="listStore" IsVisible="False" AbsoluteLayout.LayoutBounds="5,5,180,40" AbsoluteLayout.LayoutFlags="None" TextHighlightMode="MultipleOccurrence" SuggestionMode="Contains" HighlightedTextColor="Red" IgnoreDiacritic="false"  IsSelectedItemsVisibleInDropDown="True"/>
+                            <Entry Placeholder="(e.g. Jecana)" Text="" x:Name="listStoreSuburb" IsVisible="False" AbsoluteLayout.LayoutBounds="5,35,180,50" AbsoluteLayout.LayoutFlags="None"/>
+                            <Button Image="saveIcon.png" BackgroundColor="Transparent" Clicked="UpdateStoreName" AbsoluteLayout.LayoutBounds="150,35,120,50" AbsoluteLayout.LayoutFlags="None" IsVisible="False" x:Name="updateBtn"/>
+
+                            <Button Image="editButton" BackgroundColor="Transparent" Clicked="EditHandler" AbsoluteLayout.LayoutBounds="0.8,20,30,30" AbsoluteLayout.LayoutFlags="XProportional"/>
+                            <Button Image="deleteButtonIcon"  BackgroundColor="Transparent" AbsoluteLayout.LayoutBounds="0.9,20,30,30" AbsoluteLayout.LayoutFlags="XProportional" Clicked="DeleteHandler" CommandParameter="{Binding .}"/>
+                           
+                        
+                        </AbsoluteLayout>
+                    </ViewCell>
+                    
+                    
+            </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <local:CustomButtonText  Text="Save" Clicked="SaveTrolly" BackgroundColor="Transparent" StartColor="#0075b9" EndColor="#00629c" TextColor="#dadadd" AbsoluteLayout.LayoutBounds="0,1,0.5,50" AbsoluteLayout.LayoutFlags="WidthProportional,PositionProportional"/>
+        <local:CustomButtonText  Text="Discard" Clicked="Discard"  BackgroundColor="Transparent" StartColor="#2d3c54" EndColor="#262b3f" TextColor="#dadadd" AbsoluteLayout.LayoutBounds="1,1,0.5,50" AbsoluteLayout.LayoutFlags="WidthProportional,PositionProportional"/>
+
+    </AbsoluteLayout>
+</ContentPage>

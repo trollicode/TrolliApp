@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+             
+             NavigationPage.HasNavigationBar="False"
+             NavigationPage.BackButtonTitle="False"
+              xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OneSignalAPI.FirstStepRegistration"
+            xmlns:local="clr-namespace:OneSignalAPI;assembly=OneSignalAPI">
+    <AbsoluteLayout>
+        <Image Source="bkg2.png" Aspect="Fill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="SizeProportional"/>
+
+        <Label Text="Sign Up"  FontSize="30" TextColor="White" AbsoluteLayout.LayoutBounds="39,29,156,46" AbsoluteLayout.LayoutFlags="None">
+            <Label.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                    <On Platform="iOS" Value="Raleway-Medium_1" />
+                    <On Platform="Android" Value="Raleway-Medium_1.ttf#Raleway-Medium_1" />
+                </OnPlatform>
+            </Label.FontFamily>
+        </Label>
+        <BoxView BackgroundColor="#0a91d2" AbsoluteLayout.LayoutBounds="39,70,28,1" AbsoluteLayout.LayoutFlags="None"/>
+
+
+        <Label Text="FULL NAME" FontSize="14" TextColor="#aed582"  AbsoluteLayout.LayoutBounds="39,130,85,20" AbsoluteLayout.LayoutFlags="None">
+            <Label.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                    <On Platform="iOS" Value="Raleway-SemiBold_1" />
+                    <On Platform="Android" Value="Raleway-SemiBold_1.ttf#Raleway-SemiBold_1" />
+                </OnPlatform>
+            </Label.FontFamily>
+        </Label>
+        <local:MyEntry x:Name="fullName" Text="" Placeholder="e.g. John Smith"  PlaceholderColor="#646b7a" TextColor="White" AbsoluteLayout.LayoutBounds="38,150,269,44" AbsoluteLayout.LayoutFlags="None">
+            <Entry.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                    <On Platform="iOS" Value="Raleway-Regular_1" />
+                    <On Platform="Android" Value="Raleway-Regular_1.ttf#Raleway-Regular_1" />
+                </OnPlatform>
+            </Entry.FontFamily>
+        </local:MyEntry>
+
+
+        <Label x:Name="fontFamily" Text="EMAIL" FontSize="14"  TextColor="#aed582" AbsoluteLayout.LayoutBounds="38,220,44,20" AbsoluteLayout.LayoutFlags="None">
+            <Label.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                    <On Platform="iOS" Value="Raleway-SemiBold_1" />
+                    <On Platform="Android" Value="Raleway-SemiBold_1.ttf#Raleway-SemiBold_1" />
+                </OnPlatform>
+            </Label.FontFamily>
+        </Label>
+        <local:MyEntry x:Name="email" Text="" Placeholder="e.g. johnsmith@gmail.com" PlaceholderColor="#646b7a" TextColor="White" AbsoluteLayout.LayoutBounds="39,240,269,44" AbsoluteLayout.LayoutFlags="None">
+            <Entry.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                    <On Platform="iOS" Value="Raleway-Regular_1" />
+                    <On Platform="Android" Value="Raleway-Regular_1.ttf#Raleway-Regular_1" />
+                </OnPlatform>
+            </Entry.FontFamily>
+        </local:MyEntry>
+
+        <Label Text="COUNTRY" FontSize="14" TextColor="#aed582"  AbsoluteLayout.LayoutBounds="39,310,87,20" AbsoluteLayout.LayoutFlags="None">
+            <Label.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                    <On Platform="iOS" Value="Raleway-SemiBold_1" />
+                    <On Platform="Android" Value="Raleway-SemiBold_1.ttf#Raleway-SemiBold_1" />
+                </OnPlatform>
+            </Label.FontFamily>
+        </Label>
+        <Label Text="Australia" FontSize="18" TextColor="White" AbsoluteLayout.LayoutBounds="39,340,87,20" AbsoluteLayout.LayoutFlags="None">
+            <Label.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                    <On Platform="iOS" Value="Raleway-SemiBold_1" />
+                    <On Platform="Android" Value="Raleway-SemiBold_1.ttf#Raleway-SemiBold_1" />
+                </OnPlatform>
+            </Label.FontFamily>
+        </Label>
+
+
+        <Label x:Name="starName" Text="" TextColor="#ff6600" FontSize="26" VerticalTextAlignment="Center" AbsoluteLayout.LayoutBounds="30,160,40,40" AbsoluteLayout.LayoutFlags="None" />
+        <Label x:Name="starEmail" Text=" "  TextColor="#ff6600" FontSize="26" VerticalTextAlignment="Center" AbsoluteLayout.LayoutBounds="30,250,40,40" AbsoluteLayout.LayoutFlags="None"/>
+        <Label x:Name="validationError" FontSize="14" TextColor="#ff6600" AbsoluteLayout.LayoutBounds="110,470,200,20" AbsoluteLayout.LayoutFlags="None">
+            <Label.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                    <On Platform="iOS" Value="Raleway-SemiBold_1" />
+                    <On Platform="Android" Value="Raleway-SemiBold_1.ttf#Raleway-SemiBold_1" />
+                </OnPlatform>
+            </Label.FontFamily>
+        </Label>
+
+
+        <local:CustomButtonText x:Name="btnSignUp" Text="Next" Clicked="next_button" BackgroundColor="Transparent" StartColor="#0075b9" EndColor="#00629c" TextColor="#dadadd" AbsoluteLayout.LayoutBounds="0,1,1,50" AbsoluteLayout.LayoutFlags="WidthProportional,PositionProportional"  />
+
+    </AbsoluteLayout>
+</ContentPage>

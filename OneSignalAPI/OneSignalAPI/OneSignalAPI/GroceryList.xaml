@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OneSignalAPI.GroceryList">
+
+    <AbsoluteLayout Padding="-5,-5,-5,-5">
+        <Image Source="bkg2.png" Aspect="Fill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="SizeProportional"/>
+        <Label Text="Add Grocery Items" TextColor="White" AbsoluteLayout.LayoutBounds="39,20,150,20"  AbsoluteLayout.LayoutFlags="None"/>
+        <Button Image="addicon.png" Text="Add Items" HorizontalOptions="StartAndExpand" Clicked="AddItems" AbsoluteLayout.LayoutBounds="39,50,150,50"  AbsoluteLayout.LayoutFlags="None"/>
+        <ListView x:Name="listView" BackgroundColor="Transparent" AbsoluteLayout.LayoutBounds="5,120,1,1" AbsoluteLayout.LayoutFlags="SizeProportional">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <AbsoluteLayout BackgroundColor="#0075b9">
+
+                            <Label Text="{Binding detailItem}" TextColor="#aed582" AbsoluteLayout.LayoutBounds="5,2,280,80" AbsoluteLayout.LayoutFlags="None">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Raleway-SemiBold_1" />
+                                        <On Platform="Android" Value="Raleway-SemiBold_1.ttf#Raleway-SemiBold_1" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
+                            </Label>
+                            <Label AbsoluteLayout.LayoutBounds="5,35,280,80" AbsoluteLayout.LayoutFlags="None" />
+                            <Button Image="deleteButtonIcon"  BackgroundColor="Transparent" AbsoluteLayout.LayoutBounds="0.9,5,30,30" AbsoluteLayout.LayoutFlags="XProportional" Clicked="DeleteHandler"  CommandParameter="{Binding .}"/>
+
+                        </AbsoluteLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </AbsoluteLayout>
+</ContentPage>

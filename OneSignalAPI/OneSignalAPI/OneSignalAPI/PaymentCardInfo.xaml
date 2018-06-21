@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OneSignalAPI.PaymentCardInfo"  xmlns:local="clr-namespace:OneSignalAPI;assembly=OneSignalAPI" Title="Payment Card Information">
+    <AbsoluteLayout>
+        <Image Source="bkg2.png" Aspect="Fill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="SizeProportional"/>
+        <Label Text="Payment Card Information" FontSize="20" TextColor="#aed582" AbsoluteLayout.LayoutBounds="0.5,20,180,50" AbsoluteLayout.LayoutFlags="XProportional" />
+        <Label Text="Card Brand" TextColor="#aed582" AbsoluteLayout.LayoutBounds="30,100,80,50"/>
+        <local:CustomPickerRenderer x:Name="cardType" TextColor="White" AbsoluteLayout.LayoutBounds="120,80,269,44" AbsoluteLayout.LayoutFlags="None">
+            <Picker.Items>
+                <x:String>Visa</x:String>
+                <x:String>MasterCard</x:String>
+            </Picker.Items>
+        </local:CustomPickerRenderer>
+
+        <Label Text="Card Number" TextColor="#aed582" AbsoluteLayout.LayoutBounds="30,160,120,50" AbsoluteLayout.LayoutFlags="None"/>
+        <Entry x:Name="cardNumber" TextColor="White" Placeholder="(e.g. 4111111111111)" AbsoluteLayout.LayoutBounds="120,140,180,50" AbsoluteLayout.LayoutFlags="None"/>
+        <Label Text="Expiry" TextColor="#aed582" AbsoluteLayout.LayoutBounds="30,220,130,50" AbsoluteLayout.LayoutFlags="None"/>
+        <local:CustomPickerRenderer x:Name="ExpiryMonth" TextColor="White" AbsoluteLayout.LayoutBounds="80,200,80,50" AbsoluteLayout.LayoutFlags="None">
+            <Picker.Items>
+                <x:String>January</x:String>
+                <x:String>February</x:String>
+                <x:String>March</x:String>
+                <x:String>April</x:String>
+                <x:String>May</x:String>
+                <x:String>June</x:String>
+                <x:String>July</x:String>
+                <x:String>Augest</x:String>
+                <x:String>September</x:String>
+                <x:String>October</x:String>
+                <x:String>November</x:String>
+                <x:String>December</x:String>
+            </Picker.Items>
+        </local:CustomPickerRenderer>
+        <local:CustomPickerRenderer x:Name="ExpiryYear" TextColor="White" AbsoluteLayout.LayoutBounds="160,200,80,50" AbsoluteLayout.LayoutFlags="None">
+            <Picker.Items>
+                <x:String>2018</x:String>
+                <x:String>2019</x:String>
+                <x:String>2020</x:String>
+                <x:String>2021</x:String>
+                <x:String>2022</x:String>
+                <x:String>2023</x:String>
+                <x:String>2024</x:String>
+                <x:String>2025</x:String>
+                <x:String>2026</x:String>
+                <x:String>2027</x:String>
+                <x:String>2028</x:String>
+                <x:String>2028</x:String>
+            </Picker.Items>
+        </local:CustomPickerRenderer>
+
+        <Label Text="Verfication Code" TextColor="#aed582" AbsoluteLayout.LayoutBounds="30,280,180,50" AbsoluteLayout.LayoutFlags="None"/>
+        <Entry x:Name="verificationCode" TextColor="White" Placeholder="(e.g. 999)" AbsoluteLayout.LayoutBounds="140,260,180,50" />
+
+        <local:CustomButtonText  Text="Find Smart Buyer" Clicked="FindSmartBuyer" BackgroundColor="Transparent" StartColor="#0075b9" EndColor="#00629c" TextColor="#dadadd" AbsoluteLayout.LayoutBounds="0,1,1,50" AbsoluteLayout.LayoutFlags="WidthProportional,PositionProportional"/>
+
+    </AbsoluteLayout>
+</ContentPage>
